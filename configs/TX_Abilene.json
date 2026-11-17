@@ -1,0 +1,411 @@
+{
+ "state": "TX",
+ "municipality": "Abilene",
+ "type": "City",
+ "county": "Taylor (also Jones)",
+ "source_document": "Abilene TX Code of Ordinances, Appendix A Land Development Code, Supplement No. 15 (Oct 2026), through Ord. No. 85-2026",
+ "parser": {
+  "row_mode": "blocks",
+  "name_anchor": "^Permitted$",
+  "category_regex": "^(Residential\\ Uses|Accessory\\ \\&\\ Incidental\\ Uses|Cultural\\ \\&\\ Recreation\\ Uses|Government,\\ Health,\\ Safety,\\ and\\ Welfare\\ Uses|Educational\\ \\&\\ Religious\\ Uses|Office\\-Type\\ Uses|Service|Trade\\ \\-\\ Retail\\ Uses|Trade\\ \\-\\ Wholesale\\ Uses|Transportation,\\ Communication,\\ \\&\\ Utilities|Resource\\ Production\\ \\&\\ Extraction|Manufacturing\\ Uses)$",
+  "drop_token_regex": "^(CDA:\\d+|Supp\\.|No\\.)$",
+  "skip_line_regex": "^(LEGEND|Permitted Uses|Parking|\\(Ord\\.|ABILENE|LAND DEV)",
+  "stop_regex": "^NEVER$"
+ },
+ "tables": [
+  {
+   "name": "Land Use Matrix",
+   "pages": [
+    838,
+    847
+   ],
+   "columns": [
+    "AO",
+    "RR",
+    "RS",
+    "PH",
+    "TH",
+    "MD",
+    "MF",
+    "MH",
+    "CU",
+    "NO",
+    "O",
+    "NR",
+    "GR",
+    "MU",
+    "CB",
+    "MX",
+    "GC",
+    "HC",
+    "LI",
+    "HI"
+   ],
+   "value_regex": "^(P|C|TP|P/|/C|P/C|P/SE|SE|/SE)$",
+   "section": "LDC § 2.4.2.1 Land Use Matrix"
+  }
+ ],
+ "column_to_zones": {
+  "RS": [
+   "RS-12",
+   "RS-8",
+   "RS-6"
+  ],
+  "RR": [
+   "RR-1",
+   "RR-5"
+  ]
+ },
+ "star_text": "use-specific conditions apply (Ch. 2, Art. 4, Div. 3)",
+ "symbols": {
+  "P": [
+   "Permitted",
+   "Allowed by right",
+   ""
+  ],
+  "C": [
+   "Conditional",
+   "Conditional Use Permit",
+   "City Council (on Planning and Zoning Commission recommendation)"
+  ],
+  "TP": [
+   "Temporary",
+   "Requires a temporary permit",
+   "Building Official"
+  ],
+  "P/C": [
+   "Permitted with conditions",
+   "Permitted or Conditional Use Permit depending on the use conditions (Ch. 2, Art. 4, Div. 3)",
+   ""
+  ],
+  "P/SE": [
+   "Permitted with conditions",
+   "Permitted or Special Exception depending on system type/size (Ch. 2, Art. 4, Div. 7)",
+   "Board of Adjustment (special exception)"
+  ]
+ },
+ "blank": [
+  "-",
+  "Not permitted",
+  "Not allowed",
+  ""
+ ],
+ "use_overrides": {
+  "Feedlot, Commercial": [
+   "-",
+   "Not permitted",
+   "Excluded from city limits (declared a public nuisance)",
+   ""
+  ]
+ },
+ "category_override": {
+  "Liquor": "Manufacturing Uses",
+  "Manufacturing (light)": "Manufacturing Uses",
+  "Manufacturing (heavy)": "Manufacturing Uses"
+ },
+ "drop_use_regex": "^\\(Ord",
+ "zones": [
+  {
+   "zone_code": "AO",
+   "zone_name": "Agricultural Open Space District",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Mostly undeveloped or farm land inside city limits; keeps open space and acts as a holding zone for newly annexed land.",
+   "use_table_column": "AO",
+   "source_section": "LDC Table 2-1; § 2.3.2.1"
+  },
+  {
+   "zone_code": "RR-1",
+   "zone_name": "Rural Residential District (RR-1)",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Large-lot rural homes; keeps residential character by excluding most commercial uses.",
+   "use_table_column": "RR",
+   "source_section": "LDC Table 2-1; § 2.3.2.2"
+  },
+  {
+   "zone_code": "RR-5",
+   "zone_name": "Rural Residential District (RR-5)",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Large-lot rural homes; keeps residential character by excluding most commercial uses.",
+   "use_table_column": "RR",
+   "source_section": "LDC Table 2-1; § 2.3.2.2"
+  },
+  {
+   "zone_code": "RS-12",
+   "zone_name": "Residential Single-Family District-12",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Low-density detached single-family homes on lots of at least 12,000 sq ft.",
+   "use_table_column": "RS",
+   "source_section": "LDC Table 2-1; § 2.3.2.3"
+  },
+  {
+   "zone_code": "RS-8",
+   "zone_name": "Residential Single-Family District-8",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Detached single-family homes on lots of at least 8,000 sq ft.",
+   "use_table_column": "RS",
+   "source_section": "LDC Table 2-1; § 2.3.2.4"
+  },
+  {
+   "zone_code": "RS-6",
+   "zone_name": "Residential Single-Family District-6",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Detached single-family homes on lots of at least 6,000 sq ft.",
+   "use_table_column": "RS",
+   "source_section": "LDC Table 2-1; § 2.3.2.5"
+  },
+  {
+   "zone_code": "PH",
+   "zone_name": "Residential Single-Family Patio Home District",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Detached single-family homes on compact zero-lot-line lots (minimum 4,500 sq ft).",
+   "use_table_column": "PH",
+   "source_section": "LDC Table 2-1; § 2.3.2.6"
+  },
+  {
+   "zone_code": "TH",
+   "zone_name": "Residential Townhome District",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Attached townhomes on individual lots at higher density (minimum 2,500 sq ft lots).",
+   "use_table_column": "TH",
+   "source_section": "LDC Table 2-1; § 2.3.2.7"
+  },
+  {
+   "zone_code": "MD",
+   "zone_name": "Residential Medium Density District",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Mix of single-family, duplex, triplex, fourplex and townhouses; up to 12 units per acre.",
+   "use_table_column": "MD",
+   "source_section": "LDC Table 2-1; § 2.3.2.8"
+  },
+  {
+   "zone_code": "MF",
+   "zone_name": "Residential Multiple-Family District",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Apartment buildings; up to 24 units per gross acre.",
+   "use_table_column": "MF",
+   "source_section": "LDC Table 2-1; § 2.3.2.9"
+  },
+  {
+   "zone_code": "MH",
+   "zone_name": "Manufactured/Mobile Home District",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Areas for manufactured/mobile homes and mobile home parks.",
+   "use_table_column": "MH",
+   "source_section": "LDC Table 2-1; § 2.3.2.10"
+  },
+  {
+   "zone_code": "CU",
+   "zone_name": "College & University District",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Main campuses of Abilene colleges and land set aside for college or university use.",
+   "use_table_column": "CU",
+   "source_section": "LDC Table 2-1; § 2.3.3.1"
+  },
+  {
+   "zone_code": "NO",
+   "zone_name": "Neighborhood Office District",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Low-intensity office and professional uses; transition between busier uses and homes.",
+   "use_table_column": "NO",
+   "source_section": "LDC Table 2-1; § 2.3.3.2"
+  },
+  {
+   "zone_code": "O",
+   "zone_name": "Office District",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Higher-quality office development in a mostly noncommercial setting with low traffic.",
+   "use_table_column": "O",
+   "source_section": "LDC Table 2-1; § 2.3.3.3"
+  },
+  {
+   "zone_code": "NR",
+   "zone_name": "Neighborhood Retail District",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Limited retail, services and offices serving a nearby neighborhood.",
+   "use_table_column": "NR",
+   "source_section": "LDC Table 2-1; § 2.3.3.4"
+  },
+  {
+   "zone_code": "GR",
+   "zone_name": "General Retail District",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Wide range of retail, services and offices serving the whole community.",
+   "use_table_column": "GR",
+   "source_section": "LDC Table 2-1; § 2.3.3.5"
+  },
+  {
+   "zone_code": "MU",
+   "zone_name": "Medical Use District",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Medical-related development planned to be compatible with nearby uses.",
+   "use_table_column": "MU",
+   "source_section": "LDC Table 2-1; § 2.3.3.6"
+  },
+  {
+   "zone_code": "CB",
+   "zone_name": "Central Business District",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Downtown Abilene: wide range of retail goods and services for the metro area.",
+   "use_table_column": "CB",
+   "source_section": "LDC Table 2-1; § 2.3.3.7"
+  },
+  {
+   "zone_code": "MX",
+   "zone_name": "Mixed Use District",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Integrated commercial and residential activity where the mix fits together.",
+   "use_table_column": "MX",
+   "source_section": "LDC Table 2-1; § 2.3.3.8"
+  },
+  {
+   "zone_code": "GC",
+   "zone_name": "General Commercial District",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Wide range of retail, personal and business services and other commercial uses with good car access.",
+   "use_table_column": "GC",
+   "source_section": "LDC Table 2-1; § 2.3.3.9"
+  },
+  {
+   "zone_code": "HC",
+   "zone_name": "Heavy Commercial District",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Sale, service and storage of goods not compatible with ordinary retail (e.g. building material yards).",
+   "use_table_column": "HC",
+   "source_section": "LDC Table 2-1; § 2.3.3.10"
+  },
+  {
+   "zone_code": "LI",
+   "zone_name": "Light Industrial District",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Manufacturing, wholesale and medium-intensity non-nuisance activities.",
+   "use_table_column": "LI",
+   "source_section": "LDC Table 2-1; § 2.3.3.11"
+  },
+  {
+   "zone_code": "HI",
+   "zone_name": "Heavy Industrial District",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Manufacturing and industrial activities with greater nuisance effects than other industry.",
+   "use_table_column": "HI",
+   "source_section": "LDC Table 2-1; § 2.3.3.12"
+  },
+  {
+   "zone_code": "COR",
+   "zone_name": "Corridor Overlay District",
+   "zone_group": "Overlay / Special",
+   "zone_type": "Overlay or special district",
+   "zone_meaning": "Extra appearance standards (signs, landscaping, screening, driveways) along designated major corridors.",
+   "use_table_column": "",
+   "source_section": "LDC Table 2-1; 2.3.4.1"
+  },
+  {
+   "zone_code": "NCO",
+   "zone_name": "Neighborhood Conservation Overlay District",
+   "zone_group": "Overlay / Special",
+   "zone_type": "Overlay or special district",
+   "zone_meaning": "Overlay that adds standards to protect an established neighborhood.",
+   "use_table_column": "",
+   "source_section": "LDC Table 2-1; Art. 3 Div. 4"
+  },
+  {
+   "zone_code": "ACO",
+   "zone_name": "Activity Center Overlay District",
+   "zone_group": "Overlay / Special",
+   "zone_type": "Overlay or special district",
+   "zone_meaning": "Overlay that adds standards for designated activity centers.",
+   "use_table_column": "",
+   "source_section": "LDC Table 2-1; Art. 3 Div. 4"
+  },
+  {
+   "zone_code": "H",
+   "zone_name": "Historic Overlay District",
+   "zone_group": "Overlay / Special",
+   "zone_type": "Overlay or special district",
+   "zone_meaning": "Overlay for historic properties and areas.",
+   "use_table_column": "",
+   "source_section": "LDC Table 2-1; Art. 3 Div. 4"
+  },
+  {
+   "zone_code": "PD",
+   "zone_name": "Planned Development District",
+   "zone_group": "Overlay / Special",
+   "zone_type": "Overlay or special district",
+   "zone_meaning": "Custom district; uses and standards set in each PD ordinance, not in the Land Use Matrix.",
+   "use_table_column": "",
+   "source_section": "LDC Table 2-1; Art. 1 Div. 4 / Art. 3"
+  }
+ ],
+ "legend": [
+  [
+   "P",
+   "Permitted",
+   "Allowed by right",
+   ""
+  ],
+  [
+   "P*",
+   "Permitted with conditions",
+   "Allowed by right; conditions in Ch. 2, Art. 4, Div. 3",
+   ""
+  ],
+  [
+   "C",
+   "Conditional",
+   "Needs a Conditional Use Permit",
+   "City Council"
+  ],
+  [
+   "TP",
+   "Temporary",
+   "Needs a temporary permit",
+   "Building Official"
+  ],
+  [
+   "P/C",
+   "Permitted with conditions",
+   "Permitted or CUP depending on conditions",
+   ""
+  ],
+  [
+   "P/SE",
+   "Permitted with conditions",
+   "Permitted or Special Exception (wind energy systems)",
+   "Board of Adjustment"
+  ],
+  [
+   "-",
+   "Not permitted",
+   "Blank in the matrix = not permitted",
+   ""
+  ],
+  [
+   "(unlisted use)",
+   "Unclear",
+   "Planning Director decides if it is similar to a listed use (§ 2.4.1(d))",
+   "Planning Director"
+  ]
+ ]
+}

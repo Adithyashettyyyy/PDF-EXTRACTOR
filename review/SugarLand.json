@@ -1,0 +1,54 @@
+{
+  "city": "SugarLand",
+  "unresolved": [
+    "legend:P:not found",
+    "zone_name:R-1E",
+    "zone_name:R-1",
+    "zone_name:R-1R",
+    "zone_name:R-1Z",
+    "zone_name:R-2",
+    "zone_name:R-3",
+    "zone_name:R-4",
+    "zone_name:B-O",
+    "zone_name:B-1",
+    "zone_name:B-2",
+    "zone_name:M-1",
+    "zone_name:M-2"
+  ],
+  "config": "C:\\Users\\adith\\OneDrive\\Desktop\\PDF extraction\\configs\\generated\\TX_SugarLand.json",
+  "use_overrides": {
+    "Bar": {
+      "values": [
+        "-",
+        "Not permitted",
+        "Not in base districts; bars are allowed in the AB-OP overlay",
+        ""
+      ],
+      "zones": [
+        "B-O",
+        "B-1",
+        "B-2",
+        "M-1",
+        "M-2",
+        "BR"
+      ],
+      "page": 124
+    },
+    "Shopping Center": {
+      "values": [
+        "-",
+        "Unclear",
+        "Depends on the land use category of each tenant",
+        ""
+      ],
+      "zones": [
+        "B-O",
+        "B-1",
+        "B-2",
+        "M-1",
+        "M-2",
+        "BR"
+      ]
+    }
+  }
+}

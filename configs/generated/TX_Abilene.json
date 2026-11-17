@@ -1,0 +1,469 @@
+{
+  "state": "TX",
+  "municipality": "Abilene",
+  "type": "City",
+  "county": "",
+  "source_document": "Code of Ordinances Supplement No. 15",
+  "parser": {
+    "drop_token_regex": "^(?:ABILENE|CDA:\\d+|CODE|LDC\\d*:\\d+|No\\.|Supp\\.)$",
+    "skip_line_regex": "^(Supp\\.|Table |TABLE |LEGEND|See Section|Use Category|Use #|BASE DISTRICTS|PRINCIPAL USES)",
+    "stop_regex": "^(?:NEVER)$",
+    "name_anchor": "^Permitted$",
+    "category_regex": "^(?:Residential Uses|Accessory\\s*&\\s*Incidental Uses|Cultural\\s*&\\s*Recreation Uses|Government,\\s*Health,\\s*Safety,\\s*and\\s*Welfare Uses|Educational\\s*&\\s*Religious Uses|Office-Type Uses|Service|Trade\\s*-\\s*Retail Uses|Trade\\s*-\\s*Wholesale Uses|Transportation,\\s*Communication,\\s*&\\s*Utilities|Resource\\s*Production\\s*&\\s*Extraction|Manufacturing Uses)$"
+  },
+  "tables": [
+    {
+      "name": "Table1",
+      "pages": [
+        838,
+        847
+      ],
+      "columns": [
+        "AO",
+        "RR",
+        "RS",
+        "PH",
+        "TH",
+        "MD",
+        "MF",
+        "MH",
+        "CU",
+        "NO",
+        "O",
+        "NR",
+        "GR",
+        "MU",
+        "CB",
+        "MX",
+        "GC",
+        "HC",
+        "LI",
+        "HI"
+      ],
+      "value_regex": "^(?:P|C|TP|P/SE|P/|P/C)\\*?$",
+      "section": "auto p. 838-847",
+      "parser": {
+        "row_mode": "blocks",
+        "name_anchor": "^Permitted$",
+        "category_regex": "^(?:Residential Uses|Accessory\\s*&\\s*Incidental Uses|Cultural\\s*&\\s*Recreation Uses|Government,\\s*Health,\\s*Safety,\\s*and\\s*Welfare Uses|Educational\\s*&\\s*Religious Uses|Office-Type Uses|Service|Trade\\s*-\\s*Retail Uses|Trade\\s*-\\s*Wholesale Uses|Transportation,\\s*Communication,\\s*&\\s*Utilities|Resource\\s*Production\\s*&\\s*Extraction|Manufacturing Uses)$"
+      }
+    }
+  ],
+  "symbols": {
+    "-": [
+      "Not permitted",
+      "Not permitted",
+      ""
+    ],
+    "\u2014": [
+      "Not permitted",
+      "Not permitted",
+      ""
+    ],
+    "\u2013": [
+      "Not permitted",
+      "Not permitted",
+      ""
+    ],
+    "P": [
+      "Permitted",
+      "Allowed by right",
+      ""
+    ],
+    "C": [
+      "Conditional",
+      "Conditional use",
+      ""
+    ],
+    "SE": [
+      "Conditional",
+      "Special exception",
+      "Zoning Board of Adjustment"
+    ],
+    "CU": [
+      "Conditional",
+      "Conditional use permit",
+      "Planning Board"
+    ],
+    "TP": [
+      "Temporary",
+      "Temporary permit",
+      ""
+    ],
+    "P(N)": [
+      "Permitted with conditions",
+      "Permitted; supplemental regulations apply",
+      ""
+    ],
+    "C(N)": [
+      "Conditional",
+      "Conditional; supplemental regulations apply",
+      ""
+    ],
+    "P/C": [
+      "Permitted with conditions",
+      "Permitted or conditional depending on standards",
+      ""
+    ],
+    "P/C(N)": [
+      "Permitted with conditions",
+      "Permitted or conditional; supplemental regulations apply",
+      ""
+    ],
+    "P/SE": [
+      "Permitted with conditions",
+      "Permitted or special exception depending on standards",
+      ""
+    ],
+    "An": [
+      "Permitted with conditions",
+      "Ancillary use only",
+      ""
+    ]
+  },
+  "blank": [
+    "-",
+    "Not permitted",
+    "Blank / empty cell = not permitted",
+    ""
+  ],
+  "legend": [
+    [
+      "-",
+      "Not permitted",
+      "Not permitted",
+      ""
+    ],
+    [
+      "\u2014",
+      "Not permitted",
+      "Not permitted",
+      ""
+    ],
+    [
+      "\u2013",
+      "Not permitted",
+      "Not permitted",
+      ""
+    ],
+    [
+      "P",
+      "Permitted",
+      "Allowed by right",
+      ""
+    ],
+    [
+      "C",
+      "Conditional",
+      "Conditional use",
+      ""
+    ],
+    [
+      "SE",
+      "Conditional",
+      "Special exception",
+      "Zoning Board of Adjustment"
+    ],
+    [
+      "CU",
+      "Conditional",
+      "Conditional use permit",
+      "Planning Board"
+    ],
+    [
+      "TP",
+      "Temporary",
+      "Temporary permit",
+      ""
+    ],
+    [
+      "P(N)",
+      "Permitted with conditions",
+      "Permitted; supplemental regulations apply",
+      ""
+    ],
+    [
+      "C(N)",
+      "Conditional",
+      "Conditional; supplemental regulations apply",
+      ""
+    ],
+    [
+      "P/C",
+      "Permitted with conditions",
+      "Permitted or conditional depending on standards",
+      ""
+    ],
+    [
+      "P/C(N)",
+      "Permitted with conditions",
+      "Permitted or conditional; supplemental regulations apply",
+      ""
+    ],
+    [
+      "P/SE",
+      "Permitted with conditions",
+      "Permitted or special exception depending on standards",
+      ""
+    ],
+    [
+      "An",
+      "Permitted with conditions",
+      "Ancillary use only",
+      ""
+    ]
+  ],
+  "zones": [
+    {
+      "zone_code": "AO",
+      "zone_name": "Agricultural Open Space District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "AO",
+      "source_section": ""
+    },
+    {
+      "zone_code": "RR",
+      "zone_name": "Rural Residential District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "RR",
+      "source_section": ""
+    },
+    {
+      "zone_code": "RS",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "RS",
+      "source_section": ""
+    },
+    {
+      "zone_code": "PH",
+      "zone_name": "Residential Single-Family Patio Home District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "PH",
+      "source_section": ""
+    },
+    {
+      "zone_code": "TH",
+      "zone_name": "Residential Townhome District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "TH",
+      "source_section": ""
+    },
+    {
+      "zone_code": "MD",
+      "zone_name": "Residential Medium Density",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "MD",
+      "source_section": ""
+    },
+    {
+      "zone_code": "MF",
+      "zone_name": "Residential Multiple-Family",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "MF",
+      "source_section": ""
+    },
+    {
+      "zone_code": "MH",
+      "zone_name": "Manufactured/Mobile Home District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "MH",
+      "source_section": ""
+    },
+    {
+      "zone_code": "CU",
+      "zone_name": "College & University District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "CU",
+      "source_section": ""
+    },
+    {
+      "zone_code": "NO",
+      "zone_name": "Neighborhood Office District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "NO",
+      "source_section": ""
+    },
+    {
+      "zone_code": "O",
+      "zone_name": "Office District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "O",
+      "source_section": ""
+    },
+    {
+      "zone_code": "NR",
+      "zone_name": "Neighborhood Retail District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "NR",
+      "source_section": ""
+    },
+    {
+      "zone_code": "GR",
+      "zone_name": "General Retail District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "GR",
+      "source_section": ""
+    },
+    {
+      "zone_code": "MU",
+      "zone_name": "Medical Use District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "MU",
+      "source_section": ""
+    },
+    {
+      "zone_code": "CB",
+      "zone_name": "Central Business District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "CB",
+      "source_section": ""
+    },
+    {
+      "zone_code": "MX",
+      "zone_name": "Mixed Use District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "MX",
+      "source_section": ""
+    },
+    {
+      "zone_code": "GC",
+      "zone_name": "General Commercial District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "GC",
+      "source_section": ""
+    },
+    {
+      "zone_code": "HC",
+      "zone_name": "Heavy Commercial District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "HC",
+      "source_section": ""
+    },
+    {
+      "zone_code": "LI",
+      "zone_name": "Light Industrial District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "LI",
+      "source_section": ""
+    },
+    {
+      "zone_code": "HI",
+      "zone_name": "Heavy Industrial District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "HI",
+      "source_section": ""
+    },
+    {
+      "zone_code": "RR-1",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "RR",
+      "source_section": ""
+    },
+    {
+      "zone_code": "RR-5",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "RR",
+      "source_section": ""
+    },
+    {
+      "zone_code": "RS-12",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "RS",
+      "source_section": ""
+    },
+    {
+      "zone_code": "RS-6",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "RS",
+      "source_section": ""
+    },
+    {
+      "zone_code": "RS-8",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "RS",
+      "source_section": ""
+    }
+  ],
+  "drop_use_regex": "^(?:\\d{1,4}$|LDC\\d*:\\d+|iv\\.|[0-9]\\.|Section\\s+\\d|That the |In issuing |Expands the |Results in |Supplemental Regulations|B\\. Parking|for parking|Off-Street|Minimum \\d|Moved from|A Home Occupation|[a-f]\\.\\s|i{1,3}\\.\\s|\\(Ord\\.)",
+  "use_name_fixes": {
+    "\\(\\s*\"\\s*6": "(6 or fewer",
+    "\\(\\s*7 Children": "(7 or more Children"
+  },
+  "unlisted_rule": {
+    "missing_uses_are": "Unclear",
+    "quote": "",
+    "section": ""
+  },
+  "column_to_zones": {
+    "RR": [
+      "RR-1",
+      "RR-5"
+    ],
+    "RS": [
+      "RS-12",
+      "RS-6",
+      "RS-8"
+    ]
+  },
+  "category_override": {
+    "Liquor": "Manufacturing Uses",
+    "Manufacturing (light)": "Manufacturing Uses",
+    "Manufacturing (heavy)": "Manufacturing Uses"
+  }
+}

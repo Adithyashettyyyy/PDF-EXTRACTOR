@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+.python-version
+.DS_Store
+Thumbs.db
+
+# Local run artifacts
+output/
+input/
+*.log
+
+# Editor
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,357 @@
+{
+ "state": "NH",
+ "municipality": "Concord",
+ "type": "City",
+ "county": "Merrimack",
+ "source_document": "Concord NH Code of Ordinances (Municode), Supplement No. 61 (May 2026), through Ord. No. 3193 (Mar 9, 2026); Title IV Zoning Ordinance, Art. 28-2",
+ "parser": {
+  "row_start_regex": "^(\\d+[A-Z]?)\\s",
+  "category_regex": "^[A-M]\\s+[A-Z]{3}",
+  "drop_token_regex": "^(6[12]\\d\\d|Supp\\.|No\\.|ZONING|ORDINANCE|CONCORD|CODE)$",
+  "skip_line_regex": "^(TABLE OF|BASE DISTRICTS|PRINCIPAL USES|ACCESSORY USES|Use Category|Use #|Supp\\.)",
+  "stop_regex": "^NEVER$"
+ },
+ "tables": [
+  {
+   "value_regex": "^(P|SE|CU|-|—|–)$",
+   "columns": [
+    "RO",
+    "RM",
+    "RS",
+    "RN",
+    "RD",
+    "RH",
+    "CN",
+    "CG",
+    "CU",
+    "CH",
+    "CBP",
+    "GWP",
+    "OCP",
+    "OFP",
+    "CVP",
+    "IS",
+    "IN",
+    "UT"
+   ],
+   "use_number_regex": "^(\\d+[A-Z]?)\\s+",
+   "category_map_by_letter": false,
+   "standards_regex": "(?:Section|Article)\\s+28-\\d+(?:-\\d+)?(?:\\([a-z0-9]+\\))?",
+   "name": "Principal and Accessory",
+   "pages": [
+    829,
+    837
+   ],
+   "section": "Concord Code § 28-2-4(j)-(k) Tables of Principal and Accessory Uses",
+   "category_map": {
+    "A RESIDENTIAL": "Principal: Residential",
+    "B EDUCATIONAL AND": "Principal: Educational and Institutional",
+    "C SERVICES—ENTERTAINMENT": "Principal: Services - Entertainment and Recreation",
+    "D SERVICES—PERSONAL": "Principal: Services - Personal and Business",
+    "E SERVICES—MEDICAL": "Principal: Services - Medical",
+    "F SERVICES—FINANCIAL": "Principal: Services - Financial and Professional",
+    "G SERVICES—LODGING": "Principal: Services - Lodging and Meeting Facilities",
+    "H RETAIL TRADE (except": "Principal: Retail Trade",
+    "I RESTAURANTS, EATING,": "Principal: Restaurants, Eating, and Drinking Places",
+    "J MOTOR VEHICLE SALES": "Principal: Motor Vehicle Sales and Service",
+    "K TRANSPORTATION,": "Principal: Transportation, Communications, and Utilities",
+    "L MANUFACTURING AND": "Principal: Manufacturing and Construction",
+    "M AGRICULTURAL": "Principal: Agricultural",
+    "A ACCESSORY TO A": "Accessory: Accessory to a Principal Residential Use",
+    "B ACCESSORY TO A": "Accessory: Accessory to a Principal Nonresidential Use",
+    "C ACCESSORY TO ANY": "Accessory: Accessory to Any Principal Use"
+   }
+  }
+ ],
+ "symbols": {
+  "P": [
+   "Permitted",
+   "Allowed by right",
+   ""
+  ],
+  "SE": [
+   "Conditional",
+   "Special exception",
+   "Zoning Board of Adjustment"
+  ],
+  "CU": [
+   "Conditional",
+   "Conditional use permit",
+   "Planning Board"
+  ],
+  "-": [
+   "Not permitted",
+   "Not permitted",
+   ""
+  ],
+  "—": [
+   "Not permitted",
+   "Not permitted",
+   ""
+  ],
+  "–": [
+   "Not permitted",
+   "Not permitted",
+   ""
+  ]
+ },
+ "blank": [
+  "(blank)",
+  "Unclear",
+  "Cell is blank in the table; verify with the city",
+  ""
+ ],
+ "zones": [
+  {
+   "zone_code": "RO",
+   "zone_name": "Open Space Residential District",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Low-density single-family homes in rural, open-space areas.",
+   "use_table_column": "RO",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "RM",
+   "zone_name": "Medium Density Residential District",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Single-family and two-family homes at medium density.",
+   "use_table_column": "RM",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "RS",
+   "zone_name": "Single-Family Residential District",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Established single-family neighborhoods.",
+   "use_table_column": "RS",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "RN",
+   "zone_name": "Neighborhood Residential District",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Mixed housing types in established neighborhoods with city utilities.",
+   "use_table_column": "RN",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "RD",
+   "zone_name": "Downtown Residential District",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Fully developed mixed-residential neighborhoods around the Concord and Penacook downtowns, up to 14 units per acre.",
+   "use_table_column": "RD",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "RH",
+   "zone_name": "High Density Residential District",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Existing multifamily and mobile home park developments on large parcels, up to 14 units per acre.",
+   "use_table_column": "RH",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "CN",
+   "zone_name": "Neighborhood Commercial District",
+   "zone_group": "Commercial",
+   "zone_type": "Base district",
+   "zone_meaning": "Homes plus small convenience retail and personal services serving a surrounding neighborhood.",
+   "use_table_column": "CN",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "CG",
+   "zone_name": "General Commercial District",
+   "zone_group": "Commercial",
+   "zone_type": "Base district",
+   "zone_meaning": "Retail, restaurants, services and high-density housing serving a city-wide or regional market along arterial streets.",
+   "use_table_column": "CG",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "CU",
+   "zone_name": "Urban Commercial District",
+   "zone_group": "Commercial",
+   "zone_type": "Base district",
+   "zone_meaning": "Mixed office, retail, restaurant, service, lodging and high-density housing next to the Concord and Penacook downtowns.",
+   "use_table_column": "CU",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "CH",
+   "zone_name": "Highway Commercial District",
+   "zone_group": "Commercial",
+   "zone_type": "Base district",
+   "zone_meaning": "Mixed commercial uses along highways, with buffering for nearby neighborhoods.",
+   "use_table_column": "CH",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "CBP",
+   "zone_name": "Central Business Performance District",
+   "zone_group": "Performance",
+   "zone_type": "Base district",
+   "zone_meaning": "Downtown Concord: central retail, office, government and residential core.",
+   "use_table_column": "CBP",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "GWP",
+   "zone_name": "Gateway Performance District",
+   "zone_group": "Performance",
+   "zone_type": "Base district",
+   "zone_meaning": "Well-designed large-scale commercial development along arterial streets at the city entrances.",
+   "use_table_column": "GWP",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "OCP",
+   "zone_name": "Opportunity Corridor Performance District",
+   "zone_group": "Performance",
+   "zone_type": "Base district",
+   "zone_meaning": "Redevelopment of under-used urban land between downtown and I-93 and other former brownfields.",
+   "use_table_column": "OCP",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "OFP",
+   "zone_name": "Office Park Performance District",
+   "zone_group": "Performance",
+   "zone_type": "Base district",
+   "zone_meaning": "Large integrated professional office and research and development parks.",
+   "use_table_column": "OFP",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "CVP",
+   "zone_name": "Civic Performance District",
+   "zone_group": "Performance",
+   "zone_type": "Base district",
+   "zone_meaning": "Government offices with cultural and high-density residential uses between downtown and the Downtown Residential district.",
+   "use_table_column": "CVP",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "IS",
+   "zone_name": "Institutional District",
+   "zone_group": "Other",
+   "zone_type": "Base district",
+   "zone_meaning": "Large government, education, healthcare and cultural campuses with offices and high-density housing.",
+   "use_table_column": "IS",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "IN",
+   "zone_name": "Industrial District",
+   "zone_group": "Other",
+   "zone_type": "Base district",
+   "zone_meaning": "Manufacturing, warehousing and other industrial development.",
+   "use_table_column": "IN",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "UT",
+   "zone_name": "Urban Transitional District",
+   "zone_group": "Other",
+   "zone_type": "Base district",
+   "zone_meaning": "Areas of mixed use transitioning between residential and nonresidential uses.",
+   "use_table_column": "UT",
+   "source_section": "Concord Code § 28-2-2"
+  },
+  {
+   "zone_code": "FH",
+   "zone_name": "Flood Hazard District",
+   "zone_group": "Overlay",
+   "zone_type": "Overlay district",
+   "zone_meaning": "Floodplain overlay; adds rules on top of the base district.",
+   "use_table_column": "",
+   "source_section": "Concord Code § 28-2-2; Art. 28-3"
+  },
+  {
+   "zone_code": "SP",
+   "zone_name": "Shoreland Protection District",
+   "zone_group": "Overlay",
+   "zone_type": "Overlay district",
+   "zone_meaning": "Shoreland overlay along protected waters.",
+   "use_table_column": "",
+   "source_section": "Concord Code § 28-2-2; Art. 28-3"
+  },
+  {
+   "zone_code": "HI",
+   "zone_name": "Historic District",
+   "zone_group": "Overlay",
+   "zone_type": "Overlay district",
+   "zone_meaning": "Historic district overlay.",
+   "use_table_column": "",
+   "source_section": "Concord Code § 28-2-2; Art. 28-3"
+  },
+  {
+   "zone_code": "WS",
+   "zone_name": "Penacook Lake Watershed Protection District",
+   "zone_group": "Overlay",
+   "zone_type": "Overlay district",
+   "zone_meaning": "Protects the Penacook Lake drinking-water watershed.",
+   "use_table_column": "",
+   "source_section": "Concord Code § 28-2-2; Art. 28-3"
+  },
+  {
+   "zone_code": "AP",
+   "zone_name": "Aquifer Protection District",
+   "zone_group": "Overlay",
+   "zone_type": "Overlay district",
+   "zone_meaning": "Protects aquifer areas.",
+   "use_table_column": "",
+   "source_section": "Concord Code § 28-2-2; Art. 28-3"
+  }
+ ],
+ "legend": [
+  [
+   "P",
+   "Permitted",
+   "Permitted by right (§ 28-2-4(a))",
+   ""
+  ],
+  [
+   "P + standards",
+   "Permitted with conditions",
+   "Permitted by right; development design / supplemental standards listed in the table apply (§ 28-2-4(f))",
+   ""
+  ],
+  [
+   "SE",
+   "Conditional",
+   "Special exception (§ 28-2-4(b))",
+   "Zoning Board of Adjustment"
+  ],
+  [
+   "CU",
+   "Conditional",
+   "Conditional use permit (§ 28-2-4(c))",
+   "Planning Board"
+  ],
+  [
+   "-",
+   "Not permitted",
+   "Dashed line = not permitted (§ 28-2-4(d))",
+   ""
+  ],
+  [
+   "(blank)",
+   "Unclear",
+   "Blank cell in the table",
+   ""
+  ],
+  [
+   "(unlisted use)",
+   "Unclear",
+   "Deputy City Manager for Development classifies the use (§ 28-2-4(e))",
+   "Deputy City Manager for Development"
+  ]
+ ]
+}

@@ -1,0 +1,25 @@
+{
+  "city": "Concord",
+  "unresolved": [
+    "legend:P:not found"
+  ],
+  "config": "C:\\Users\\adith\\OneDrive\\Desktop\\PDF extraction\\configs\\generated\\NH_Concord.json",
+  "category_map": {
+    "A RESIDENTIAL": "Principal: Residential",
+    "B EDUCATIONAL AND": "Principal: Educational and Institutional",
+    "C SERVICES\u2014ENTERTAINMENT": "Principal: Services - Entertainment and Recreation",
+    "D SERVICES\u2014PERSONAL": "Principal: Services - Personal and Business",
+    "E SERVICES\u2014MEDICAL": "Principal: Services - Medical",
+    "F SERVICES\u2014FINANCIAL": "Principal: Services - Financial and Professional",
+    "G SERVICES\u2014LODGING": "Principal: Services - Lodging and Meeting Facilities",
+    "H RETAIL TRADE (except": "Principal: Retail Trade",
+    "I RESTAURANTS, EATING,": "Principal: Restaurants, Eating, and Drinking Places",
+    "J MOTOR VEHICLE SALES": "Principal: Motor Vehicle Sales and Service",
+    "K TRANSPORTATION,": "Principal: Transportation, Communications, and Utilities",
+    "L MANUFACTURING AND": "Principal: Manufacturing and Construction",
+    "M AGRICULTURAL": "Principal: Agricultural",
+    "A ACCESSORY TO A": "Accessory: Accessory to a Principal Residential Use",
+    "B ACCESSORY TO A": "Accessory: Accessory to a Principal Nonresidential Use",
+    "C ACCESSORY TO ANY": "Accessory: Accessory to Any Principal Use"
+  }
+}

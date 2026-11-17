@@ -1,0 +1,18 @@
+{
+  "city": "Abilene",
+  "unresolved": [
+    "legend:P:not found",
+    "zone_name:RS",
+    "zone_name:RR-1",
+    "zone_name:RR-5",
+    "zone_name:RS-12",
+    "zone_name:RS-6",
+    "zone_name:RS-8"
+  ],
+  "config": "C:\\Users\\adith\\OneDrive\\Desktop\\PDF extraction\\configs\\generated\\TX_Abilene.json",
+  "category_override": {
+    "Liquor": "Manufacturing Uses",
+    "Manufacturing (light)": "Manufacturing Uses",
+    "Manufacturing (heavy)": "Manufacturing Uses"
+  }
+}

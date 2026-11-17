@@ -1,0 +1,376 @@
+{
+ "state": "TX",
+ "municipality": "Sugar Land",
+ "type": "City",
+ "county": "Fort Bend",
+ "source_document": "Sugar Land TX Development Code (Municode), Supplement No. 14 (July 2026), through Ord. No. 2397 (Dec 16, 2025); Tables 2-71.1, 2-91.1, 2-123.1",
+ "parser": {
+  "name_anchor": "^Land$",
+  "category_regex": "^(Residential|Institutional|Office|Retail|Services|Vehicle-Related|Industrial)$",
+  "drop_token_regex": "^(LDC2:\\d+|Supp\\.|No\\.)$",
+  "skip_line_regex": "^(Table 2-|See Section|P = Permitted|P\\(N\\) or|\\* = Residential|Land Use|Supp\\.|\\d+$|\")",
+  "stop_regex": "^\\d+\\.\\s"
+ },
+ "tables": [
+  {
+   "name": "Residential",
+   "pages": [
+    107,
+    114
+   ],
+   "columns": [
+    "R-1E",
+    "R-1",
+    "R-1R",
+    "R-1Z",
+    "R-2",
+    "R-3",
+    "R-4"
+   ],
+   "value_regex": "^(P|C|P/C|An|\\(N\\)|P\\(N\\)|C\\(N\\)|P/C\\(N\\))\\*?$",
+   "section": "Dev. Code § 2-71, Table 2-71.1"
+  },
+  {
+   "name": "Nonresidential",
+   "pages": [
+    122,
+    160
+   ],
+   "columns": [
+    "B-O",
+    "B-1",
+    "B-2",
+    "M-1",
+    "M-2",
+    "BR"
+   ],
+   "value_regex": "^(P|C|P/C|An|\\(N\\)|P\\(N\\)|C\\(N\\)|P/C\\(N\\))\\*?$",
+   "section": "Dev. Code § 2-91, Table 2-91.1"
+  },
+  {
+   "name": "LPR",
+   "pages": [
+    197,
+    206
+   ],
+   "columns": [
+    "LPR"
+   ],
+   "value_regex": "^(P|C|P/C|An|\\(N\\)|P\\(N\\)|C\\(N\\)|P/C\\(N\\))\\*?$",
+   "section": "Dev. Code § 2-123, Table 2-123.1"
+  }
+ ],
+ "symbols": {
+  "P": [
+   "Permitted",
+   "Allowed by right",
+   ""
+  ],
+  "P(N)": [
+   "Permitted with conditions",
+   "Allowed by right if supplemental regulations apply (see notes under the table)",
+   ""
+  ],
+  "C": [
+   "Conditional",
+   "Conditional Use Permit",
+   "City Council (Planning and Zoning Commission recommends)"
+  ],
+  "C(N)": [
+   "Conditional",
+   "Conditional Use Permit; supplemental regulations apply (see notes under the table)",
+   "City Council (Planning and Zoning Commission recommends)"
+  ],
+  "P/C": [
+   "Permitted with conditions",
+   "Permitted or Conditional Use Permit depending on the supplemental regulations",
+   "City Council (Planning and Zoning Commission recommends)"
+  ],
+  "P/C(N)": [
+   "Permitted with conditions",
+   "Permitted or Conditional Use Permit depending on the supplemental regulations",
+   "City Council (Planning and Zoning Commission recommends)"
+  ],
+  "An": [
+   "Permitted with conditions",
+   "Ancillary use only (allowed alongside a permitted principal use)",
+   ""
+  ]
+ },
+ "blank": [
+  "-",
+  "Not permitted",
+  "Blank box = prohibited",
+  ""
+ ],
+ "use_overrides": {
+  "Bar": {
+   "values": [
+    "-",
+    "Not permitted",
+    "Not in base districts; bars are allowed in the Alcoholic Beverage On-Premise (AB-OP) overlay",
+    ""
+   ],
+   "zones": ["B-O", "B-1", "B-2", "M-1", "M-2", "BR"],
+   "page": 124
+  },
+  "Shopping Center": {
+   "values": [
+    "-",
+    "Unclear",
+    "Depends on the land use category of each tenant",
+    ""
+   ],
+   "zones": ["B-O", "B-1", "B-2", "M-1", "M-2", "BR"]
+  }
+ },
+ "use_name_fixes": {
+  "\\(\\s*\"\\s*6": "(6 or fewer",
+  "\\(\\s*7 Children": "(7 or more Children"
+ },
+ "drop_use_regex": "^(Supplemental Regulations|B\\. Parking|for parking|Off-Street)",
+ "extra_route_columns": {
+  "B-O": "a CUP is also required if the site abuts a single-family lot (§ 2-55 F)",
+  "B-1": "a CUP is also required if the site abuts a single-family lot (§ 2-55 F)",
+  "B-2": "a CUP is also required if the site abuts a single-family lot (§ 2-55 F)",
+  "M-1": "a CUP is also required if the site abuts a single-family lot (§ 2-55 F)"
+ },
+ "zones": [
+  {
+   "zone_code": "R-1E",
+   "zone_name": "Residential Estate",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Single-family homes on large lots; low-density estate neighborhoods.",
+   "use_table_column": "R-1E",
+   "source_section": "Dev. Code Table 2-51; § 2-70(A)"
+  },
+  {
+   "zone_code": "R-1",
+   "zone_name": "Standard Single-Family Residential",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Standard low-density single-family detached homes.",
+   "use_table_column": "R-1",
+   "source_section": "Dev. Code Table 2-51; § 2-70(C)"
+  },
+  {
+   "zone_code": "R-1R",
+   "zone_name": "Restricted Single-Family Residential",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Single-family homes on intermediate lots with larger setbacks for more open space.",
+   "use_table_column": "R-1R",
+   "source_section": "Dev. Code Table 2-51; § 2-70(B)"
+  },
+  {
+   "zone_code": "R-1Z",
+   "zone_name": "Zero Lot Line Single-Family Residential",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Single-family homes built on one side lot line, smaller yards and lots.",
+   "use_table_column": "R-1Z",
+   "source_section": "Dev. Code Table 2-51; § 2-70(D)"
+  },
+  {
+   "zone_code": "R-2",
+   "zone_name": "Two-Family Residential",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Duplexes on moderate lots; transition between single-family and multi-family areas.",
+   "use_table_column": "R-2",
+   "source_section": "Dev. Code Table 2-51; § 2-70(E)"
+  },
+  {
+   "zone_code": "R-3",
+   "zone_name": "Townhouse Residential",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Low-rise, low-density townhouse complexes with shared landscaped open space.",
+   "use_table_column": "R-3",
+   "source_section": "Dev. Code Table 2-51; § 2-70(F)"
+  },
+  {
+   "zone_code": "R-4",
+   "zone_name": "Multi-Family Residential",
+   "zone_group": "Residential",
+   "zone_type": "Base district",
+   "zone_meaning": "Medium-density apartments with high design, landscaping and open-space standards.",
+   "use_table_column": "R-4",
+   "source_section": "Dev. Code Table 2-51; § 2-70(G)"
+  },
+  {
+   "zone_code": "B-O",
+   "zone_name": "Business Office",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Offices plus limited service and retail uses compatible with offices.",
+   "use_table_column": "B-O",
+   "source_section": "Dev. Code Table 2-51; § 2-90(A)"
+  },
+  {
+   "zone_code": "B-1",
+   "zone_name": "Neighborhood Business",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Small-scale, low-impact retail serving everyday needs of nearby residents.",
+   "use_table_column": "B-1",
+   "source_section": "Dev. Code Table 2-51; § 2-90(B)"
+  },
+  {
+   "zone_code": "B-2",
+   "zone_name": "General Business",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "General commercial including shopping centers and wholesale; along arterial streets with high traffic.",
+   "use_table_column": "B-2",
+   "source_section": "Dev. Code Table 2-51; § 2-90(C)"
+  },
+  {
+   "zone_code": "M-1",
+   "zone_name": "Restricted Industrial",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Light industry with compatible office and service uses in an industrial-park setting.",
+   "use_table_column": "M-1",
+   "source_section": "Dev. Code Table 2-51; § 2-90(D)"
+  },
+  {
+   "zone_code": "M-2",
+   "zone_name": "General Industrial",
+   "zone_group": "Nonresidential",
+   "zone_type": "Base district",
+   "zone_meaning": "Light and heavy industry including warehousing, manufacturing and assembly.",
+   "use_table_column": "M-2",
+   "source_section": "Dev. Code Table 2-51; § 2-90(E)"
+  },
+  {
+   "zone_code": "BR",
+   "zone_name": "Brazos River Park and Conservation Zoning District",
+   "zone_group": "Special",
+   "zone_type": "Special district",
+   "zone_meaning": "Park and conservation land along the Brazos River.",
+   "use_table_column": "BR",
+   "source_section": "Dev. Code Table 2-51; § Art. II Part 7"
+  },
+  {
+   "zone_code": "LPR",
+   "zone_name": "Lake Pointe Redevelopment Zoning District",
+   "zone_group": "Special",
+   "zone_type": "Special district",
+   "zone_meaning": "Mixed-use redevelopment district at Lake Pointe with its own use table.",
+   "use_table_column": "LPR",
+   "source_section": "Dev. Code Table 2-51; § Art. II Part 5"
+  },
+  {
+   "zone_code": "MUC",
+   "zone_name": "Mixed Use Conservation District",
+   "zone_group": "Special",
+   "zone_type": "Special district",
+   "zone_meaning": "Mixed-use conservation district with its own regulations (uses not extracted in this file).",
+   "use_table_column": "",
+   "source_section": "Dev. Code Table 2-51; § Art. II Part 4"
+  },
+  {
+   "zone_code": "HR-1",
+   "zone_name": "The Hill Area Residential District",
+   "zone_group": "Special",
+   "zone_type": "Special district",
+   "zone_meaning": "Historic Hill neighborhood residential district with its own regulations (uses not extracted in this file).",
+   "use_table_column": "",
+   "source_section": "Dev. Code Table 2-51; § Art. II Part 8"
+  },
+  {
+   "zone_code": "PD",
+   "zone_name": "Planned Development",
+   "zone_group": "Special",
+   "zone_type": "Special district",
+   "zone_meaning": "Custom district; each PD ordinance lists its own permitted uses (§ 2-58).",
+   "use_table_column": "",
+   "source_section": "Dev. Code Table 2-51; § Art. II Part 6"
+  },
+  {
+   "zone_code": "AZ",
+   "zone_name": "Airport Zone",
+   "zone_group": "Special",
+   "zone_type": "Special district",
+   "zone_meaning": "Land subject to compatible land use rules of the Sugar Land Airport Zoning Commission.",
+   "use_table_column": "",
+   "source_section": "Dev. Code Table 2-51; § Table 2-51.2"
+  },
+  {
+   "zone_code": "AB-OP",
+   "zone_name": "Alcoholic Beverage On-Premise Overlay District",
+   "zone_group": "Overlay",
+   "zone_type": "Overlay district",
+   "zone_meaning": "Overlay where bars and on-premise alcohol uses are allowed.",
+   "use_table_column": "",
+   "source_section": "Dev. Code Table 2-51; § Art. II Part 9"
+  },
+  {
+   "zone_code": "ISOD-90A",
+   "zone_name": "Industrial Sign Overlay",
+   "zone_group": "Overlay",
+   "zone_type": "Overlay district",
+   "zone_meaning": "Sign overlay for industrial areas (signage rules only).",
+   "use_table_column": "",
+   "source_section": "Dev. Code Table 2-51; § Art. II Part 10"
+  }
+ ],
+ "legend": [
+  [
+   "P",
+   "Permitted",
+   "Permitted by right",
+   ""
+  ],
+  [
+   "P(N)",
+   "Permitted with conditions",
+   "Permitted by right if the supplemental regulations (notes) are met",
+   ""
+  ],
+  [
+   "C",
+   "Conditional",
+   "Needs a Conditional Use Permit",
+   "City Council (Planning and Zoning Commission recommends)"
+  ],
+  [
+   "C(N)",
+   "Conditional",
+   "CUP plus supplemental regulations",
+   "City Council (Planning and Zoning Commission recommends)"
+  ],
+  [
+   "P/C(N)",
+   "Permitted with conditions",
+   "Permitted or CUP depending on supplemental regulations",
+   "City Council (Planning and Zoning Commission recommends)"
+  ],
+  [
+   "An",
+   "Permitted with conditions",
+   "Ancillary use only",
+   ""
+  ],
+  [
+   "-",
+   "Not permitted",
+   "Blank box = prohibited use",
+   ""
+  ],
+  [
+   "* on B-O, B-1, B-2, M-1",
+   "Conditional (in some cases)",
+   "Residential Proximity CUP: needed when the site abuts a single-family lot (§ 2-55 F)",
+   "City Council (Planning and Zoning Commission recommends)"
+  ],
+  [
+   "(unlisted use)",
+   "Unclear",
+   "Director decides the classification (§ 2-57); appeal to Zoning Board of Adjustment",
+   "Director"
+  ]
+ ]
+}

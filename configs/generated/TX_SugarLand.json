@@ -1,0 +1,415 @@
+{
+  "state": "TX",
+  "municipality": "Sugar Land",
+  "type": "City",
+  "county": "",
+  "source_document": "Development Code Supplement No. 14",
+  "parser": {
+    "drop_token_regex": "^(?:CDA:\\d+|CODE|LDC\\d*:\\d+|No\\.|Supp\\.|ZONING)$",
+    "skip_line_regex": "^(Supp\\.|Table |TABLE |LEGEND|See Section|Use Category|Use #|BASE DISTRICTS|PRINCIPAL USES)",
+    "stop_regex": "^(?:NEVER)$",
+    "name_anchor": "^Land$",
+    "category_regex": "^(Residential|Institutional|Office|Retail|Services|Vehicle-Related|Industrial)$"
+  },
+  "tables": [
+    {
+      "name": "Table1",
+      "pages": [
+        107,
+        114
+      ],
+      "columns": [
+        "R-1E",
+        "R-1",
+        "R-1R",
+        "R-1Z",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "value_regex": "^(?:P|C|\\(N\\)|An|P\\(N\\)|C\\(N\\))\\*?$",
+      "section": "auto p. 107-114",
+      "standards_regex": "(?:Section|Article)\\s+28-\\d+(?:-\\d+)?(?:\\([a-z0-9]+(?:-[a-z0-9]+)?\\))?",
+      "parser": {
+        "name_anchor": "^Land$",
+        "category_regex": "^(Residential|Institutional|Office|Retail|Services|Vehicle-Related|Industrial)$"
+      }
+    },
+    {
+      "name": "Table2",
+      "pages": [
+        122,
+        160
+      ],
+      "columns": [
+        "B-O",
+        "B-1",
+        "B-2",
+        "M-1",
+        "M-2",
+        "BR"
+      ],
+      "value_regex": "^(?:P|\\(N\\)|C|P\\(N\\)|An|P/C|C\\(N\\)|P/C\\(N\\))\\*?$",
+      "section": "auto p. 122-160",
+      "standards_regex": "(?:Section|Article)\\s+28-\\d+(?:-\\d+)?(?:\\([a-z0-9]+(?:-[a-z0-9]+)?\\))?",
+      "parser": {
+        "name_anchor": "^Land$",
+        "category_regex": "^(Residential|Institutional|Office|Retail|Services|Vehicle-Related|Industrial)$"
+      }
+    },
+    {
+      "name": "Table3",
+      "pages": [
+        197,
+        205
+      ],
+      "columns": [
+        "LPR"
+      ],
+      "value_regex": "^(?:P|\\(N\\)|C|P\\(N\\)|C\\(N\\))\\*?$",
+      "section": "auto p. 197-205",
+      "standards_regex": "(?:Section|Article)\\s+28-\\d+(?:-\\d+)?(?:\\([a-z0-9]+(?:-[a-z0-9]+)?\\))?",
+      "parser": {
+        "name_anchor": "^Land$",
+        "category_regex": "^(Residential|Institutional|Office|Retail|Services|Vehicle-Related|Industrial)$"
+      }
+    }
+  ],
+  "symbols": {
+    "-": [
+      "Not permitted",
+      "Not permitted",
+      ""
+    ],
+    "\u2014": [
+      "Not permitted",
+      "Not permitted",
+      ""
+    ],
+    "\u2013": [
+      "Not permitted",
+      "Not permitted",
+      ""
+    ],
+    "P": [
+      "Permitted",
+      "Allowed by right",
+      ""
+    ],
+    "C": [
+      "Conditional",
+      "Conditional use",
+      ""
+    ],
+    "SE": [
+      "Conditional",
+      "Special exception",
+      "Zoning Board of Adjustment"
+    ],
+    "CU": [
+      "Conditional",
+      "Conditional use permit",
+      "Planning Board"
+    ],
+    "TP": [
+      "Temporary",
+      "Temporary permit",
+      ""
+    ],
+    "P(N)": [
+      "Permitted with conditions",
+      "Permitted; supplemental regulations apply",
+      ""
+    ],
+    "C(N)": [
+      "Conditional",
+      "Conditional; supplemental regulations apply",
+      ""
+    ],
+    "P/C": [
+      "Permitted with conditions",
+      "Permitted or conditional depending on standards",
+      ""
+    ],
+    "P/C(N)": [
+      "Permitted with conditions",
+      "Permitted or conditional; supplemental regulations apply",
+      ""
+    ],
+    "P/SE": [
+      "Permitted with conditions",
+      "Permitted or special exception depending on standards",
+      ""
+    ],
+    "An": [
+      "Permitted with conditions",
+      "Ancillary use only",
+      ""
+    ]
+  },
+  "blank": [
+    "-",
+    "Not permitted",
+    "Blank / empty cell = not permitted",
+    ""
+  ],
+  "legend": [
+    [
+      "-",
+      "Not permitted",
+      "Not permitted",
+      ""
+    ],
+    [
+      "\u2014",
+      "Not permitted",
+      "Not permitted",
+      ""
+    ],
+    [
+      "\u2013",
+      "Not permitted",
+      "Not permitted",
+      ""
+    ],
+    [
+      "P",
+      "Permitted",
+      "Allowed by right",
+      ""
+    ],
+    [
+      "C",
+      "Conditional",
+      "Conditional use",
+      ""
+    ],
+    [
+      "SE",
+      "Conditional",
+      "Special exception",
+      "Zoning Board of Adjustment"
+    ],
+    [
+      "CU",
+      "Conditional",
+      "Conditional use permit",
+      "Planning Board"
+    ],
+    [
+      "TP",
+      "Temporary",
+      "Temporary permit",
+      ""
+    ],
+    [
+      "P(N)",
+      "Permitted with conditions",
+      "Permitted; supplemental regulations apply",
+      ""
+    ],
+    [
+      "C(N)",
+      "Conditional",
+      "Conditional; supplemental regulations apply",
+      ""
+    ],
+    [
+      "P/C",
+      "Permitted with conditions",
+      "Permitted or conditional depending on standards",
+      ""
+    ],
+    [
+      "P/C(N)",
+      "Permitted with conditions",
+      "Permitted or conditional; supplemental regulations apply",
+      ""
+    ],
+    [
+      "P/SE",
+      "Permitted with conditions",
+      "Permitted or special exception depending on standards",
+      ""
+    ],
+    [
+      "An",
+      "Permitted with conditions",
+      "Ancillary use only",
+      ""
+    ]
+  ],
+  "zones": [
+    {
+      "zone_code": "R-1E",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "R-1E",
+      "source_section": ""
+    },
+    {
+      "zone_code": "R-1",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "R-1",
+      "source_section": ""
+    },
+    {
+      "zone_code": "R-1R",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "R-1R",
+      "source_section": ""
+    },
+    {
+      "zone_code": "R-1Z",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "R-1Z",
+      "source_section": ""
+    },
+    {
+      "zone_code": "R-2",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "R-2",
+      "source_section": ""
+    },
+    {
+      "zone_code": "R-3",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "R-3",
+      "source_section": ""
+    },
+    {
+      "zone_code": "R-4",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "R-4",
+      "source_section": ""
+    },
+    {
+      "zone_code": "B-O",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "B-O",
+      "source_section": ""
+    },
+    {
+      "zone_code": "B-1",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "B-1",
+      "source_section": ""
+    },
+    {
+      "zone_code": "B-2",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "B-2",
+      "source_section": ""
+    },
+    {
+      "zone_code": "M-1",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "M-1",
+      "source_section": ""
+    },
+    {
+      "zone_code": "M-2",
+      "zone_name": "",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "M-2",
+      "source_section": ""
+    },
+    {
+      "zone_code": "BR",
+      "zone_name": "Brazos River Park and Conservation Zoning District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "BR",
+      "source_section": ""
+    },
+    {
+      "zone_code": "LPR",
+      "zone_name": "Lake Pointe Redevelopment Zoning District",
+      "zone_group": "",
+      "zone_type": "Base district",
+      "zone_meaning": "",
+      "use_table_column": "LPR",
+      "source_section": ""
+    }
+  ],
+  "drop_use_regex": "^(?:\\d{1,4}$|LDC\\d*:\\d+|iv\\.|[0-9]\\.|Section\\s+\\d|That the |In issuing |Expands the |Results in |Supplemental Regulations|B\\. Parking|for parking|Off-Street|Minimum \\d|Moved from|A Home Occupation|[a-f]\\.\\s|i{1,3}\\.\\s|\\(Ord\\.)",
+  "use_name_fixes": {
+    "\\(\\s*\"\\s*6": "(6 or fewer",
+    "\\(\\s*7 Children": "(7 or more Children"
+  },
+  "unlisted_rule": {
+    "missing_uses_are": "Unclear",
+    "quote": "",
+    "section": ""
+  },
+  "use_overrides": {
+    "Bar": {
+      "values": [
+        "-",
+        "Not permitted",
+        "Not in base districts; bars are allowed in the AB-OP overlay",
+        ""
+      ],
+      "zones": [
+        "B-O",
+        "B-1",
+        "B-2",
+        "M-1",
+        "M-2",
+        "BR"
+      ],
+      "page": 124
+    },
+    "Shopping Center": {
+      "values": [
+        "-",
+        "Unclear",
+        "Depends on the land use category of each tenant",
+        ""
+      ],
+      "zones": [
+        "B-O",
+        "B-1",
+        "B-2",
+        "M-1",
+        "M-2",
+        "BR"
+      ]
+    }
+  }
+}
